@@ -5,8 +5,8 @@
         <script>
             const links = {
                 'example': 'https://example.com/',
-                'home': 'web/home',
-                'portfolio': 'web/portfolio',
+                'home': '/web/home',
+                'portfolio': '/web/portfolio',
             }
 
             const redirectLinks = {
@@ -30,11 +30,10 @@
                 } else if (links[segments.at(-1)]) {
                     document.getElementById('mtext').textContent = 'Redirecting to ' + segments.at(-1)
                     window.location.href = links[segments.at(-1)]
-                } else {
-                    document.getElementById('mtext').textContent = '404 (Not Found)'
                 }
                 //
             }
+            document.getElementById('mtext').textContent = '404 (Not Found)'
 
 
 
