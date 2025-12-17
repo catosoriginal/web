@@ -3,39 +3,8 @@
     <body>
         <p id="mtext"></p>
         <script>
-            const links = {
-                'example': 'https://example.com/',
-                //'mc': 'https://minecraft.net',
-                //'aternos': 'https://aternos.org',
-                //'redirectgithub': 'https://github.com',
-                'home': '/home',
-                'portfolio': '/portfolio',
-            }
-
-            const redirectLinks = {
-                'github': 'https://github.com/@catosoriginal',
-                'google': 'https://google.com/404',
-            }
-
-            const path = window.location.pathname.split('/').pop();
-            const hash = window.location.hash.slice(1);
-
-            if (path.includes('redirect/')) {
-                const redirectPath = path.split("redirect/")[1];
-                if (redirectLinks[redirectPath]) {
-                    document.getElementById('mtext').textContent = 'Redirecting to ' + redirectLinks[redirectPath];
-                    window.location.href = redirectLinks[redirectPath];
-                }
-                else if (links[path]) {
-                document.getElementById('mtext').textContent = 'Redirecting to ' + links[path];
-                window.location.href = links[path];
-            } else if (links[hash]) {
-                //document.getElementById('mtext').textContent = 'Redirecting to ' + links[hash];
-                //window.location.href = links[hash];
-            } else {
-                document.getElementById('mtext').textContent = 'Not found link :(';
-            }
-            } 
+            document.getElementById('mtext').textContent = 'Redirecting...'
+            window.location.href = "/home"
         </script>
     </body>
 </html>
