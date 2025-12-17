@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="eng"> 
+    <body>
+        <p id="mtext"></p>
+        <script>
+            const links = {
+                'example': 'https://example.com/',
+                'home': '/home',
+                'portfolio': '/portfolio',
+            }
+
+            const redirectLinks = {
+                'github': 'https://github.com/@catosoriginal',
+                'google': 'https://google.com/404',
+            }
+
+            // [ OLD METHOD! ] const path = window.location.pathname.split('/').pop();
+            // [ OLD METHOD! ] const hash = window.location.hash.slice(1);
+
+            const segments = window.location.pathname.split('/').filter(Boolean);
+
+            if (segments.includes('redirect')) {
+                if (segments.indexOf("redirect") !== -1) {
+                    var redirectIndex = segments.indexOf("redirect")
+                    var redirectKey = segments[redirectIndex + 1]
+                    if (redirectLinks[redirectKey]) {
+                    document.getElementById('mtext').textContent = 'Redirecting to ' + redirectLinks[redirectKey]
+                    window.location.href = redirectLinks[redirectKey]
+                }
+                }
+                //
+                else if (links[segments.at(-1)]) {
+                    document.getElementById('mtext').textContent = 'Redirecting to ' + segments.at(-1)
+                    window.location.href = links[segments.at(-1)]
+                } else {
+                    document.getElementById('mtext').textContent = '404 (Not Found)'
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
