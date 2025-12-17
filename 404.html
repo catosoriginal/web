@@ -27,14 +27,13 @@
                     document.getElementById('mtext').textContent = 'Redirecting to ' + redirectLinks[redirectKey]
                     window.location.href = redirectLinks[redirectKey]
                 }
-                }
-                //
-                else if (links[segments.at(-1)]) {
+                } else if (links[segments.at(-1)]) {
                     document.getElementById('mtext').textContent = 'Redirecting to ' + segments.at(-1)
                     window.location.href = links[segments.at(-1)]
                 } else {
                     document.getElementById('mtext').textContent = '404 (Not Found)'
                 }
+                //
             }
 
 
