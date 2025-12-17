@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="eng"> 
+    <body>
+        <p id="mtext"></p>
+        <script>
+            const links = {
+                'example': 'https://example.com/',
+                'mc': 'https://minecraft.net',
+                'aternos': 'https://aternos.org',
+                'github': 'https://github.com',
+            }
+
+            const path = window.location.pathname.split('/').pop();
+            const hash = window.location.hash.slice(1);
+            if (links[path]) {
+                document.getElementById('mtext').textContent = 'Redirecting to ' + links[path];
+                window.location.href = links[path];
+            } else if (links[hash]) {
+                document.getElementById('mtext').textContent = 'Redirecting to ' + links[hash];
+                window.location.href = links[hash];
+            } else {
+                document.getElementById('mtext').textContent = 'Not found link :(';
+            }
+        </script>
+    </body>
+</html>
+
